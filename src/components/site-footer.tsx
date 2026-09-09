@@ -34,6 +34,16 @@ export function SiteFooter() {
                 Shipping & returns
               </Link>
             </li>
+            <li>
+              <a href={FAMILY.parent.href} className="text-muted transition-colors hover:text-gold">
+                Parent studio
+              </a>
+            </li>
+            <li>
+              <a href={FAMILY.sparkle.href} className="text-muted transition-colors hover:text-gold">
+                True Sparkle
+              </a>
+            </li>
           </ul>
         </div>
         <div>

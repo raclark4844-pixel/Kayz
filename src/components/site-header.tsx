@@ -2,7 +2,6 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { ShoppingBag } from "lucide-react";
 import { useEffect, useState } from "react";
 import { BrandMark } from "@/components/brand-mark";
-import { FamilyHeaderLinks } from "@/components/family-links";
 import { cartCount, useCart } from "@/lib/cart";
 import { useShop } from "@/lib/shop-store";
 import { NAV } from "@/lib/site";
@@ -69,7 +68,6 @@ export function SiteHeader() {
               Sign out
             </button>
           ) : null}
-          <FamilyHeaderLinks />
           <button
             type="button"
             onClick={openCart}
