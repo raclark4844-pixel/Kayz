@@ -82,6 +82,15 @@ function Home() {
               </span>
             </a>
           ))}
+          <a
+            href="/custom"
+            className="bg-background px-4 py-8 text-center transition-colors hover:bg-card"
+          >
+            <span className="block font-serif text-2xl text-foreground">Custom</span>
+            <span className="mt-2 block text-[0.65rem] uppercase tracking-[0.22em] text-gold">
+              Order
+            </span>
+          </a>
         </div>
       </section>
 
