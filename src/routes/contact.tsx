@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { MailForm } from "@/components/mail-form";
 import { PageIntro } from "@/components/page-intro";
 import { SocialLinks } from "@/components/social-icons";
@@ -10,7 +10,7 @@ export const Route = createFileRoute("/contact")({
     pageHead({
       title: "Contact KayzCharmzz | Cleveland",
       description:
-        "Email Lana Moss or call the Cleveland studio about handmade tumblers, candles, junk cases, jewelry, and custom orders.",
+        "Email Lana Moss or call the Cleveland studio about handmade tumblers, candles, junk cases, jewelry, and custom orders. Photos are optional on custom requests.",
       path: "/contact",
     }),
   component: ContactPage,
@@ -20,7 +20,12 @@ function ContactPage() {
   return (
     <main className="pb-nav pb-20">
       <PageIntro kicker="Write Lana" title="Contact">
-        Questions, pickups, and custom ideas — Lana Moss reads every note.
+        Questions, pickups, and custom ideas — Lana Moss reads every note. For a
+        custom tumbler, charm mix, or junk case, use the{" "}
+        <Link to="/custom" className="text-gold underline">
+          custom order form
+        </Link>
+        . A photo is optional.
       </PageIntro>
       <div className="mx-auto grid max-w-6xl gap-12 px-4 py-12 sm:px-6 md:grid-cols-2">
         <div className="space-y-8">

@@ -3,6 +3,7 @@ import { Plus } from "lucide-react";
 import { PageIntro } from "@/components/page-intro";
 import { ProductCard } from "@/components/product-card";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { CustomCta } from "@/components/custom-cta";
 import { Button } from "@/components/ui/button";
 import { CATEGORIES, productsByCategory } from "@/lib/catalog";
 import { SPARKLE_URL, pageHead } from "@/lib/seo";
@@ -13,7 +14,7 @@ export const Route = createFileRoute("/shop")({
     pageHead({
       title: "Shop Handmade Gifts | KayzCharmzz Cleveland",
       description:
-        "Shop handmade tumblers, soy candles, junk phone cases, charm jewelry, and beaded pens from KayzCharmzz in Cleveland. Custom is part of the shop.",
+        "Shop handmade tumblers, soy candles, junk phone cases, charm jewelry, and beaded pens from KayzCharmzz in Cleveland. Custom orders welcome — a photo is optional.",
       path: "/shop",
     }),
   component: ShopPage,
@@ -37,8 +38,9 @@ function ShopPage() {
         />
       </div>
       <PageIntro kicker="The shop" title="Handmade, ready to gift">
-        Tumblers, candles, junk cases, jewelry, and pens from Lana’s table. Original
-        diamond painting kits are at{" "}
+        Tumblers, candles, junk cases, jewelry, and pens from Lana’s table. Custom
+        is part of the shop — describe the piece, and add a photo only if you have
+        one. Original diamond painting kits are at{" "}
         <a href={SPARKLE_URL} className="text-gold underline">
           True Sparkle
         </a>
@@ -69,6 +71,12 @@ function ShopPage() {
               {c.label}
             </a>
           ))}
+          <Link
+            to="/custom"
+            className="inline-flex h-10 shrink-0 items-center rounded-full px-4 text-xs uppercase tracking-[0.16em] text-muted hover:text-gold"
+          >
+            Custom
+          </Link>
         </div>
       </div>
       <section className="mx-auto max-w-6xl px-4 py-10 sm:px-6">
@@ -81,6 +89,9 @@ function ShopPage() {
             ))}
           </div>
         )}
+        <div className="mt-14">
+          <CustomCta heading="Want a piece that is not on this list?" />
+        </div>
       </section>
     </main>
   );

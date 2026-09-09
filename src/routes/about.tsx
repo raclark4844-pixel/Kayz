@@ -9,7 +9,7 @@ export const Route = createFileRoute("/about")({
     pageHead({
       title: "About KayzCharmzz | Cleveland Handmade Boutique",
       description:
-        "KayzCharmzz is a Black-owned, woman-led handmade boutique in Cleveland, started in 2021. Sister brand True Sparkle makes original diamond painting kits.",
+        "KayzCharmzz is a Black-owned, woman-led handmade boutique in Cleveland, started in 2021. Custom orders welcome — a photo is optional. Sister brand True Sparkle makes original diamond painting kits.",
       path: "/about",
     }),
   component: AboutPage,
@@ -43,8 +43,10 @@ function AboutPage() {
             with more thought — without breaking the bank or the pockets.
           </p>
           <p>
-            Custom is part of the shop. If you can picture it, Lana will help
-            make it.
+            Custom is part of the shop. Tell Lana the colors, the name, the
+            occasion. A photo of a mockup or a shade you like helps if you have
+            one — it is not required. She will write back with a price and a lead
+            time.
           </p>
           <p>
             {SISTER_SENTENCE}{" "}
@@ -57,9 +59,14 @@ function AboutPage() {
             </a>
             — we do not sell the same kits here.
           </p>
-          <Button asChild>
-            <Link to="/contact">Say hello</Link>
-          </Button>
+          <div className="flex flex-wrap gap-3">
+            <Button asChild>
+              <Link to="/custom">Custom order</Link>
+            </Button>
+            <Button asChild variant="outline">
+              <Link to="/contact">Say hello</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </main>

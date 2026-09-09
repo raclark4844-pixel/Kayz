@@ -24,8 +24,12 @@ function ShippingPage() {
           <h2 className="font-serif text-3xl text-foreground">Lead time</h2>
           <p className="mt-3">
             Tumblers and candles often ship in about a week. Junk cases and matching
-            sets can take two to three weeks. Custom charm mixes follow the note you
-            send. Holidays run longer.
+            sets can take two to three weeks. Custom pieces follow the note you send
+            on the{" "}
+            <Link to="/custom" className="text-gold underline">
+              custom order
+            </Link>{" "}
+            form — a photo is optional. Holidays run longer.
           </p>
         </section>
         <section>

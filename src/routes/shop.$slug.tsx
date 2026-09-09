@@ -157,12 +157,19 @@ function ProductPage() {
           <p className="mt-4 text-xs text-muted">
             Checkout next — shipping or Cleveland pickup, then Lana confirms PayPal or Cash App.
           </p>
+          <p className="mt-6 text-sm text-muted">
+            Want this in different colors, a name, or a matching piece?{" "}
+            <Link to="/custom" className="text-gold underline">
+              Start a custom order
+            </Link>
+            . A photo is optional.
+          </p>
           <div className="mt-10 flex gap-4 text-xs uppercase tracking-[0.16em]">
             <Link to="/shop" className="text-muted hover:text-gold">
               Keep shopping
             </Link>
             <Link to="/custom" className="text-muted hover:text-gold">
-              Want it custom?
+              Custom
             </Link>
             <Link to="/shipping-returns" className="text-muted hover:text-gold">
               Shipping

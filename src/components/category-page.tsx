@@ -2,6 +2,7 @@ import { Link } from "@tanstack/react-router";
 import { PageIntro } from "@/components/page-intro";
 import { ProductCard } from "@/components/product-card";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { CustomCta } from "@/components/custom-cta";
 import { CATEGORIES, productsByCategory, type CategoryId } from "@/lib/catalog";
 import { SPARKLE_URL } from "@/lib/seo";
 import { useShop } from "@/lib/shop-store";
@@ -53,6 +54,9 @@ export function CategoryPage({
             ))}
           </div>
         )}
+        <div className="mt-14">
+          <CustomCta heading="Want this custom?" compact />
+        </div>
         <p className="mt-10 text-center text-sm text-muted">
           <Link to="/shop" className="text-gold hover:underline">
             View the full shop

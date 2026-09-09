@@ -7,7 +7,7 @@ export const Route = createFileRoute("/jewelry")({
     pageHead({
       title: "Charm Jewelry Cleveland | KayzCharmzz",
       description:
-        "Handmade charm bracelets, heart drop earrings, and gold-tone sets from KayzCharmzz in Cleveland. Custom charm mixes on request.",
+        "Handmade charm bracelets, heart drop earrings, and gold-tone sets from KayzCharmzz in Cleveland. Custom charm mixes on request — a photo is optional.",
       path: "/jewelry",
     }),
   component: () => (
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/jewelry")({
       id="jewelry"
       kicker="Charm jewelry"
       title="Handmade jewelry"
-      intro="Bracelets, earrings, and lockets made to gift. Custom charm mixes are part of the shop — tell Lana the vision."
+      intro="Bracelets, earrings, and lockets made to gift. Custom charm mixes are part of the shop — tell Lana the vision. A photo is optional."
     />
   ),
 });

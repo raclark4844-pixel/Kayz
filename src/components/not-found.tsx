@@ -8,14 +8,15 @@ export function NotFound() {
       <p className="text-xs uppercase tracking-[0.22em] text-gold">404</p>
       <h1 className="mt-3 font-serif text-4xl">That piece isn’t in the shop</h1>
       <p className="mt-4 text-muted">
-        Browse handmade gifts, start a custom order, or write Lana.
+        Browse handmade gifts, start a custom order, or write Lana. A photo on a
+        custom request is optional.
       </p>
       <div className="mt-8 flex flex-col gap-3 sm:flex-row">
         <Button asChild>
           <Link to="/shop">Shop</Link>
         </Button>
         <Button asChild variant="outline">
-          <Link to="/contact">Contact</Link>
+          <Link to="/custom">Custom order</Link>
         </Button>
       </div>
       <p className="mt-8 text-sm text-muted">

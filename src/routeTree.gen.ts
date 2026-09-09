@@ -24,6 +24,7 @@ import { Route as PhoneCasesRouteImport } from './routes/phone-cases'
 import { Route as ShippingReturnsRouteImport } from './routes/shipping-returns'
 import { Route as ShopRouteImport } from './routes/shop'
 import { Route as TumblersRouteImport } from './routes/tumblers'
+import { Route as ApiCustomOrderRouteImport } from './routes/api/custom-order'
 import { Route as ShopSlugRouteImport } from './routes/shop.$slug'
 
 const IndexRoute = IndexRouteImport.update({
@@ -101,6 +102,11 @@ const TumblersRoute = TumblersRouteImport.update({
   path: '/tumblers',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiCustomOrderRoute = ApiCustomOrderRouteImport.update({
+  id: '/api/custom-order',
+  path: '/api/custom-order',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ShopSlugRoute = ShopSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -123,6 +129,7 @@ export interface FileRoutesByFullPath {
   '/shipping-returns': typeof ShippingReturnsRoute
   '/shop': typeof ShopRouteWithChildren
   '/tumblers': typeof TumblersRoute
+  '/api/custom-order': typeof ApiCustomOrderRoute
   '/shop/$slug': typeof ShopSlugRoute
 }
 export interface FileRoutesByTo {
@@ -141,6 +148,7 @@ export interface FileRoutesByTo {
   '/shipping-returns': typeof ShippingReturnsRoute
   '/shop': typeof ShopRouteWithChildren
   '/tumblers': typeof TumblersRoute
+  '/api/custom-order': typeof ApiCustomOrderRoute
   '/shop/$slug': typeof ShopSlugRoute
 }
 export interface FileRoutesById {
@@ -160,6 +168,7 @@ export interface FileRoutesById {
   '/shipping-returns': typeof ShippingReturnsRoute
   '/shop': typeof ShopRouteWithChildren
   '/tumblers': typeof TumblersRoute
+  '/api/custom-order': typeof ApiCustomOrderRoute
   '/shop/$slug': typeof ShopSlugRoute
 }
 export interface FileRouteTypes {
@@ -180,6 +189,7 @@ export interface FileRouteTypes {
     | '/shipping-returns'
     | '/shop'
     | '/tumblers'
+    | '/api/custom-order'
     | '/shop/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -198,6 +208,7 @@ export interface FileRouteTypes {
     | '/shipping-returns'
     | '/shop'
     | '/tumblers'
+    | '/api/custom-order'
     | '/shop/$slug'
   id:
     | '__root__'
@@ -216,6 +227,7 @@ export interface FileRouteTypes {
     | '/shipping-returns'
     | '/shop'
     | '/tumblers'
+    | '/api/custom-order'
     | '/shop/$slug'
   fileRoutesById: FileRoutesById
 }
@@ -235,6 +247,7 @@ export interface RootRouteChildren {
   ShippingReturnsRoute: typeof ShippingReturnsRoute
   ShopRoute: typeof ShopRouteWithChildren
   TumblersRoute: typeof TumblersRoute
+  ApiCustomOrderRoute: typeof ApiCustomOrderRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -344,6 +357,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TumblersRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/custom-order': {
+      id: '/api/custom-order'
+      path: '/api/custom-order'
+      fullPath: '/api/custom-order'
+      preLoaderRoute: typeof ApiCustomOrderRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/shop/$slug': {
       id: '/shop/$slug'
       path: '/$slug'
@@ -380,6 +400,7 @@ const rootRouteChildren: RootRouteChildren = {
   ShippingReturnsRoute: ShippingReturnsRoute,
   ShopRoute: ShopRouteWithChildren,
   TumblersRoute: TumblersRoute,
+  ApiCustomOrderRoute: ApiCustomOrderRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

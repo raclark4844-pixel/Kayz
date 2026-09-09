@@ -7,7 +7,7 @@ export const Route = createFileRoute("/tumblers")({
     pageHead({
       title: "Handmade Tumblers Cleveland | KayzCharmzz",
       description:
-        "Handmade 20oz insulated tumblers, glitter cups, and snow-globe tumblers made to order in Cleveland. Custom colors welcome.",
+        "Handmade 20oz insulated tumblers, glitter cups, and snow-globe tumblers made to order in Cleveland. Custom colors welcome — a photo is optional.",
       path: "/tumblers",
     }),
   component: () => (
@@ -15,7 +15,7 @@ export const Route = createFileRoute("/tumblers")({
       id="tumblers"
       kicker="Hot or cold"
       title="Handmade tumblers"
-      intro="Insulated cups, glitter finishes, and snow-globe styles made to order in Cleveland. Size, materials, and lead time are on each piece."
+      intro="Insulated cups, glitter finishes, and snow-globe styles made to order in Cleveland. Size, materials, and lead time are on each piece. Custom colors welcome — a photo is optional."
     />
   ),
 });

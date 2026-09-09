@@ -52,7 +52,8 @@ function Home() {
           <p className="mt-4 text-muted">
             Beautiful gifts, without breaking the bank. Jewelry, soy candles,
             tumblers, junk phone cases, and beaded pens — made with care in Cleveland.
-            Custom is part of the shop. Original diamond painting kits live at{" "}
+            Custom is part of the shop: describe the piece, and add a photo only if
+            you have one. Original diamond painting kits live at{" "}
             <a href={SPARKLE_URL} className="text-gold underline">
               True Sparkle
             </a>
@@ -164,7 +165,9 @@ function Home() {
           <div className="absolute inset-x-0 bottom-0 p-6">
             <p className="text-[0.65rem] uppercase tracking-[0.22em] text-gold">Made for you</p>
             <h3 className="mt-1 font-serif text-3xl">Custom orders</h3>
-            <p className="mt-1 text-sm text-muted">Tell Lana the vision. She will bring it to life.</p>
+            <p className="mt-1 text-sm text-muted">
+              Describe it. A photo helps if you have one — it is optional.
+            </p>
           </div>
         </Link>
       </section>
