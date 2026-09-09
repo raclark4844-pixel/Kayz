@@ -99,7 +99,7 @@ function CheckoutPage() {
         <h1 className="mt-3 font-serif text-4xl">Thank you</h1>
         <p className="mt-4 text-muted">
           A message opened to {SITE.email} with every piece in your bag — including
-          custom and newly added shop items. Kay will reply with PayPal or Cash App
+          custom and newly added shop items. Lana will reply with PayPal or Cash App
           to finish, and a time if you chose pickup.
         </p>
         <Button asChild className="mt-8">
@@ -273,7 +273,7 @@ function CheckoutPage() {
             ) : (
               <p className="mt-4 text-sm text-muted">
                 Pickup is in Cleveland, Ohio. Allow {leadTimeLabel(lead)} for made-to-order
-                pieces, then Kay will text a time.
+                pieces, then Lana will text a time.
               </p>
             )}
           </section>
@@ -281,15 +281,15 @@ function CheckoutPage() {
           <section>
             <h2 className="font-serif text-2xl">Payment</h2>
             <div className="mt-4 rounded-lg bg-card px-4 py-4 shadow-[0_0_0_1px_rgb(212_175_55/0.22)]">
-              <p className="text-sm font-medium text-gold">Pay Kay after she confirms</p>
+              <p className="text-sm font-medium text-gold">Pay Lana after she confirms</p>
               <p className="mt-2 text-sm text-muted">
                 Place order opens a message to {SITE.email} with this bag — every
-                tumbler, candle, charm, and any piece added in the studio. Kay replies
+                tumbler, candle, charm, and any piece added in the studio. Lana replies
                 with PayPal or Cash App. No card is charged on this page.
               </p>
             </div>
             <div className="mt-4">
-              <Field label="Note to Kay (optional)">
+              <Field label="Note to Lana (optional)">
                 <Textarea
                   rows={3}
                   placeholder="Gift wrap, colors, gate code, pickup day…"
@@ -370,7 +370,7 @@ function CheckoutPage() {
               </div>
             </dl>
             <p className="text-xs text-muted">
-              Made to order — please allow {leadTimeLabel(lead)}. Tax is confirmed by Kay
+              Made to order — please allow {leadTimeLabel(lead)}. Tax is confirmed by Lana
               if it applies.
             </p>
           </div>

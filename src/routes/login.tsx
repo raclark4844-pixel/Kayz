@@ -33,7 +33,7 @@ function LoginPage() {
       <p className="text-center text-[0.7rem] uppercase tracking-[0.28em] text-gold">Studio</p>
       <h1 className="mt-3 text-center font-serif text-4xl">Sign in</h1>
       <p className="mt-3 text-center text-sm text-muted">
-        Private access for Kay. Shoppers do not need an account.
+        Private access for Lana. Shoppers do not need an account.
       </p>
       {isAdmin ? (
         <div className="mt-8 text-center">

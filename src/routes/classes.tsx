@@ -10,7 +10,7 @@ export const Route = createFileRoute("/classes")({
     pageHead({
       title: "Jewelry Classes | KayzCharmzz Cleveland",
       description:
-        "Book a one-hour online jewelry class with Kay for $55, or request a candle class. Learn charms, findings, and finishing in Cleveland’s sister studio.",
+        "Book a one-hour online jewelry class with Lana for $55, or request a candle class. Learn charms, findings, and finishing in Cleveland’s sister studio.",
       path: "/classes",
     }),
   component: ClassesPage,
@@ -35,7 +35,7 @@ function ClassesPage() {
           description: "One hour live online jewelry class. Candle class poured on request.",
         }}
       />
-      <PageIntro kicker="Sit with Kay" title="Classes">
+      <PageIntro kicker="Sit with Lana" title="Classes">
         Learn the pieces, then take the skill home. Jewelry is booked by the
         hour. Candle class is poured on request.
       </PageIntro>
@@ -50,7 +50,7 @@ function ClassesPage() {
             <p className="text-xs uppercase tracking-[0.22em] text-gold">Online</p>
             <h2 className="mt-1 font-serif text-3xl">Jewelry class</h2>
             <p className="mt-2 text-sm text-muted">
-              One hour, live online. $55. Bring your questions — Kay walks you
+              One hour, live online. $55. Bring your questions — Lana walks you
               through charms, findings, and finishing a piece you will actually wear.
             </p>
           </article>
@@ -59,7 +59,7 @@ function ClassesPage() {
             <h2 className="mt-1 font-serif text-3xl">Candle class</h2>
             <p className="mt-2 text-sm text-muted">
               Soy wax, scent, and pour technique. Scheduled when a small group
-              is ready — tell Kay what you want to learn.
+              is ready — tell Lana what you want to learn.
             </p>
           </article>
         </div>
@@ -68,7 +68,7 @@ function ClassesPage() {
         <h2 className="mb-6 text-center font-serif text-3xl">Book a seat</h2>
         <MailForm
           subjectPrefix="KayzCharmzz class request"
-          submitLabel="Email booking to Kay"
+          submitLabel="Email booking to Lana"
           fields={[
             { name: "name", label: "Name", required: true, autoComplete: "name" },
             { name: "email", label: "Email", type: "email", required: true, autoComplete: "email" },

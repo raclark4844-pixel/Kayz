@@ -155,7 +155,7 @@ function ProductPage() {
             </div>
           ) : null}
           <p className="mt-4 text-xs text-muted">
-            Checkout next — shipping or Cleveland pickup, then Kay confirms PayPal or Cash App.
+            Checkout next — shipping or Cleveland pickup, then Lana confirms PayPal or Cash App.
           </p>
           <div className="mt-10 flex gap-4 text-xs uppercase tracking-[0.16em]">
             <Link to="/shop" className="text-muted hover:text-gold">

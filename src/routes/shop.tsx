@@ -37,7 +37,7 @@ function ShopPage() {
         />
       </div>
       <PageIntro kicker="The shop" title="Handmade, ready to gift">
-        Tumblers, candles, junk cases, jewelry, and pens from Kay’s table. Original
+        Tumblers, candles, junk cases, jewelry, and pens from Lana’s table. Original
         diamond painting kits are at{" "}
         <a href={SPARKLE_URL} className="text-gold underline">
           True Sparkle

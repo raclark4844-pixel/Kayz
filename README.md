@@ -11,7 +11,7 @@ Sister brands: [True Sparkle](https://www.truesparkles.com) (diamond painting ki
 - Home, Shop, Classes, Custom, About, Contact, Shipping
 - Category pages: tumblers, candles, jewelry, phone cases, pens
 - Product catalog (tumblers, candles, charms, earrings, cases — no diamond kits)
-- Local bag + checkout (Cleveland pickup or USPS, order emails Kay)
+- Local bag + checkout (Cleveland pickup or USPS, order emails Lana)
 - Studio login to add, edit, or remove pieces and set lead time
 - Family links to parent company and True Sparkle
 

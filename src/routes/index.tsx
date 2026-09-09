@@ -122,7 +122,7 @@ function Home() {
             className="aspect-4/3 w-full rounded-lg object-cover"
           />
           <div>
-            <p className="text-[0.7rem] uppercase tracking-[0.28em] text-gold">From Kay M</p>
+            <p className="text-[0.7rem] uppercase tracking-[0.28em] text-gold">From Lana</p>
             <blockquote className="mt-4 font-serif text-3xl leading-snug italic text-foreground">
               “I created KayzCharmzz when I had so many beautiful items around
               that I needed to share them with the world.”
@@ -149,7 +149,7 @@ function Home() {
           />
           <div className="absolute inset-0 bg-linear-to-t from-background via-background/20 to-transparent" />
           <div className="absolute inset-x-0 bottom-0 p-6">
-            <p className="text-[0.65rem] uppercase tracking-[0.22em] text-gold">Learn with Kay</p>
+            <p className="text-[0.65rem] uppercase tracking-[0.22em] text-gold">Learn with Lana</p>
             <h3 className="mt-1 font-serif text-3xl">Classes</h3>
             <p className="mt-1 text-sm text-muted">Jewelry $55 / hour online. Candles on request.</p>
           </div>
@@ -164,7 +164,7 @@ function Home() {
           <div className="absolute inset-x-0 bottom-0 p-6">
             <p className="text-[0.65rem] uppercase tracking-[0.22em] text-gold">Made for you</p>
             <h3 className="mt-1 font-serif text-3xl">Custom orders</h3>
-            <p className="mt-1 text-sm text-muted">Tell Kay the vision. She will bring it to life.</p>
+            <p className="mt-1 text-sm text-muted">Tell Lana the vision. She will bring it to life.</p>
           </div>
         </Link>
       </section>

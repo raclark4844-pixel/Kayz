@@ -7,7 +7,7 @@ export const SITE = {
   phoneHref: "tel:+12163090331",
   city: "Cleveland, Ohio",
   est: "2021",
-  founder: "Kay M",
+  founder: "Lana",
   instagram: "https://www.instagram.com/kayzcharmzz",
   facebook: "https://www.facebook.com/kayzcharmzz",
   tiktok: "https://www.tiktok.com/@mamk40",

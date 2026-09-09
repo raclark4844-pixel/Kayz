@@ -62,7 +62,7 @@ export const DELIVERY = [
   {
     id: "pickup" as const,
     label: "Pickup",
-    detail: "Cleveland, Ohio — Kay will confirm a time.",
+    detail: "Cleveland, Ohio — Lana will confirm a time.",
     price: 0,
   },
   {
@@ -151,7 +151,7 @@ export function buildOrderEmail(items: CartItem[], details: CheckoutDetails) {
     `Total: ${formatPrice(total)}`,
     details.notes ? `\nNotes:\n${details.notes}` : "",
     "",
-    "Kay will reply with PayPal or Cash App to finish payment.",
+    "Lana will reply with PayPal or Cash App to finish payment.",
   ]
     .filter((line) => line !== "")
     .join("\n");

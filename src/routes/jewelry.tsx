@@ -15,7 +15,7 @@ export const Route = createFileRoute("/jewelry")({
       id="jewelry"
       kicker="Charm jewelry"
       title="Handmade jewelry"
-      intro="Bracelets, earrings, and lockets made to gift. Custom charm mixes are part of the shop — tell Kay the vision."
+      intro="Bracelets, earrings, and lockets made to gift. Custom charm mixes are part of the shop — tell Lana the vision."
     />
   ),
 });

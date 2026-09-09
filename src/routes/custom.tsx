@@ -9,7 +9,7 @@ export const Route = createFileRoute("/custom")({
     pageHead({
       title: "Custom Orders | KayzCharmzz Cleveland",
       description:
-        "Custom tumblers, charm jewelry, candles, and junk cases made to order in Cleveland. Tell Kay the vision — she will bring it to life.",
+        "Custom tumblers, charm jewelry, candles, and junk cases made to order in Cleveland. Tell Lana the vision — she will bring it to life.",
       path: "/custom",
     }),
   component: CustomPage,
@@ -31,7 +31,7 @@ function CustomPage() {
       />
       <PageIntro kicker="Made for you" title="Custom orders">
         Custom is part of the shop. A unique design, a gift with a name on it,
-        a tumbler in her colors — Kay will take the vision from here.
+        a tumbler in her colors — Lana will take the vision from here.
       </PageIntro>
       <div className="mx-auto grid max-w-6xl items-start gap-12 px-4 py-12 sm:px-6 md:grid-cols-[1fr_1.1fr]">
         <img
@@ -41,7 +41,7 @@ function CustomPage() {
         />
         <MailForm
           subjectPrefix="KayzCharmzz custom order"
-          submitLabel="Email my vision to Kay"
+          submitLabel="Email my vision to Lana"
           fields={[
             { name: "name", label: "Name", required: true, autoComplete: "name" },
             { name: "email", label: "Email", type: "email", required: true, autoComplete: "email" },

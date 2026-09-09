@@ -103,7 +103,7 @@ export const PRODUCTS: Product[] = [
     categories: ["cases", "tumblers"],
     short: "Matching bling case and tumbler, made as a set.",
     description:
-      "A handmade junk / decoden phone case paired with a matching tumbler. Winnie the Pooh charm mix, glossy luxury finish, sized for iPhone Pro Max. Personalize the charm mix with Kay.",
+      "A handmade junk / decoden phone case paired with a matching tumbler. Winnie the Pooh charm mix, glossy luxury finish, sized for iPhone Pro Max. Personalize the charm mix with Lana.",
     details: ["Case + tumbler set", "Fits iPhone Pro Max", "Handmade junk-case charms", "Personalize on request"],
     image: "/products/junk-case-tumbler-set.jpg",
     featured: true,

@@ -15,7 +15,7 @@ export const Route = createFileRoute("/candles")({
       id="candles"
       kicker="Poured here"
       title="Soy candles"
-      intro="Soy wax, dessert jars, and essential-oil pours from Kay’s table. Each listing names size, scent, and made-to-order time."
+      intro="Soy wax, dessert jars, and essential-oil pours from Lana’s table. Each listing names size, scent, and made-to-order time."
     />
   ),
 });

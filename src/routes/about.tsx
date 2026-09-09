@@ -43,7 +43,7 @@ function AboutPage() {
             with more thought — without breaking the bank or the pockets.
           </p>
           <p>
-            Custom is part of the shop. If you can picture it, Kay will help
+            Custom is part of the shop. If you can picture it, Lana will help
             make it.
           </p>
           <p>

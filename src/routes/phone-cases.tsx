@@ -15,7 +15,7 @@ export const Route = createFileRoute("/phone-cases")({
       id="cases"
       kicker="Junk cases"
       title="Junk phone cases"
-      intro="Fitted shells with handmade charm piles. Confirm your phone model in the notes. Matching tumbler sets are listed when Kay is building them."
+      intro="Fitted shells with handmade charm piles. Confirm your phone model in the notes. Matching tumbler sets are listed when Lana is building them."
     />
   ),
 });
