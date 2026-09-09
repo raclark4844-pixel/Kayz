@@ -1,5 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { GraduationCap, House, Mail, Sparkles, Store } from "lucide-react";
+import { FamilyNavStrip } from "@/components/family-links";
 import { cn } from "@/lib/utils";
 
 const ITEMS = [
@@ -18,6 +19,7 @@ export function BottomNav() {
       aria-label="Mobile"
       className="fixed inset-x-0 bottom-0 z-40 border-t border-line bg-background/95 pb-[env(safe-area-inset-bottom)] backdrop-blur-md lg:hidden"
     >
+      <FamilyNavStrip />
       <ul className="grid grid-cols-5">
         {ITEMS.map((item) => {
           const active =

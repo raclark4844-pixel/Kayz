@@ -51,6 +51,30 @@ export function TrueSparkleButton({
   );
 }
 
+export function FamilyNavStrip({ className }: { className?: string }) {
+  return (
+    <div className={cn("grid grid-cols-2 gap-2 border-b border-line px-3 py-2", className)}>
+      <a
+        href={FAMILY.sparkle.href}
+        rel="noopener"
+        className="inline-flex h-9 items-center justify-center gap-1 rounded-full border border-gold/45 px-2 text-[0.65rem] font-medium uppercase tracking-[0.12em] text-gold hover:border-gold hover:bg-gold/10"
+      >
+        <span className="truncate">{FAMILY.sparkle.name}</span>
+        <ArrowUpRight className="size-3 shrink-0" aria-hidden />
+      </a>
+      <a
+        href={FAMILY.parent.href}
+        rel="noopener"
+        aria-label={`Back to ${FAMILY.parent.name}`}
+        className="inline-flex h-9 items-center justify-center gap-1 rounded-full border border-gold/45 px-2 text-[0.65rem] font-medium uppercase tracking-[0.12em] text-gold hover:border-gold hover:bg-gold/10"
+      >
+        <span className="truncate">Parent studio</span>
+        <ArrowUpRight className="size-3 shrink-0" aria-hidden />
+      </a>
+    </div>
+  );
+}
+
 export function FamilyBrandButtons({ className }: { className?: string }) {
   return (
     <div
