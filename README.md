@@ -39,8 +39,6 @@ Signed in, you can add items (price, description, photo, lead time), edit them, 
 
 - lana@ikscharmsandtwosparkles.com
 - 216-309-0331
-- Instagram / Facebook: kayzcharmzz
-- TikTok: mamk40
 
 ## Stack
 

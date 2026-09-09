@@ -33,11 +33,7 @@ function ContactPage() {
             </p>
           </div>
           <div>
-            <p className="text-xs uppercase tracking-[0.22em] text-gold">Follow</p>
-            <p className="mt-2 text-sm text-muted">
-              Instagram & Facebook @kayzcharmzz · TikTok @mamk40
-            </p>
-            <SocialLinks className="-ml-2 mt-1" />
+            <SocialLinks className="-ml-2" />
           </div>
         </div>
         <MailForm
