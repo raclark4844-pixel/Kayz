@@ -1,6 +1,5 @@
 import { Link } from "@tanstack/react-router";
 import { BrandMark } from "@/components/brand-mark";
-import { FamilyBrandButtons } from "@/components/family-links";
 import { SocialLinks } from "@/components/social-icons";
 import { FAMILY, NAV, SITE } from "@/lib/site";
 import { NAP_LINE } from "@/lib/seo";
@@ -36,12 +35,12 @@ export function SiteFooter() {
             </li>
             <li>
               <a href={FAMILY.parent.href} className="text-muted transition-colors hover:text-gold">
-                Parent studio
+                {FAMILY.parent.label}
               </a>
             </li>
             <li>
               <a href={FAMILY.sparkle.href} className="text-muted transition-colors hover:text-gold">
-                True Sparkle
+                {FAMILY.sparkle.label}
               </a>
             </li>
           </ul>
@@ -73,22 +72,8 @@ export function SiteFooter() {
         </div>
       </div>
       <div className="gold-rule" />
-      <div className="mx-auto max-w-6xl px-4 py-10 text-center sm:px-6">
-        <p className="text-[0.65rem] font-medium uppercase tracking-[0.22em] text-gold">
-          The family
-        </p>
-        <p className="mt-3 font-serif text-2xl text-foreground">
-          Part of {FAMILY.parent.name}
-        </p>
-        <p className="mx-auto mt-2 max-w-md text-sm text-muted">
-          Return to the parent studio, or shop original diamond painting kits at
-          True Sparkle.
-        </p>
-        <FamilyBrandButtons className="mt-6" />
-      </div>
-      <div className="gold-rule" />
       <p className="px-4 py-5 text-center text-[0.7rem] tracking-[0.12em] text-muted">
-        {NAP_LINE}
+        {NAP_LINE} · Part of {FAMILY.parent.name}
       </p>
     </footer>
   );
