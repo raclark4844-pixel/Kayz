@@ -8,9 +8,9 @@ import { pageHead } from "@/lib/seo";
 export const Route = createFileRoute("/contact")({
   head: () =>
     pageHead({
-      title: "Contact KayzCharmzz | Cleveland",
+      title: "Contact KayzCharmzz | Avon, Ohio",
       description:
-        "Email Lana Moss or call the Cleveland studio about handmade tumblers, candles, junk cases, jewelry, and custom orders. Photos are optional on custom requests.",
+        `Email Lana Moss or visit ${SITE.address}. Handmade tumblers, candles, junk cases, jewelry, and custom orders — photos optional on custom requests.`,
       path: "/contact",
     }),
   component: ContactPage,
@@ -46,10 +46,15 @@ function ContactPage() {
             </a>
           </div>
           <div>
-            <p className="text-xs uppercase tracking-[0.22em] text-gold">Home</p>
-            <p className="mt-1 font-serif text-2xl">
-              {SITE.city} · Est. {SITE.est}
+            <p className="text-xs uppercase tracking-[0.22em] text-gold">Studio</p>
+            <p className="mt-1 font-serif text-2xl leading-snug">
+              {SITE.street}
+              <br />
+              {SITE.unit}
+              <br />
+              {SITE.city} {SITE.zip}
             </p>
+            <p className="mt-2 text-sm text-muted">Est. {SITE.est} · Pickup by appointment</p>
           </div>
           <div>
             <SocialLinks className="-ml-2" />

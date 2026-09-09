@@ -1,6 +1,7 @@
 import { leadTimeLabel, type LeadTimeId, type Product } from "./catalog";
 import { formatPrice } from "./utils";
 import type { CartItem } from "./cart";
+import { SITE } from "./site";
 
 export const US_STATES = [
   ["AL", "Alabama"],
@@ -62,7 +63,7 @@ export const DELIVERY = [
   {
     id: "pickup" as const,
     label: "Pickup",
-    detail: "Cleveland, Ohio — Lana will confirm a time.",
+    detail: `${SITE.address} — Lana will confirm a time.`,
     price: 0,
   },
   {
@@ -121,7 +122,7 @@ export function buildOrderEmail(items: CartItem[], details: CheckoutDetails) {
   });
   const shipBlock =
     details.delivery === "pickup"
-      ? ["Delivery: Pickup in Cleveland, Ohio", "Shipping: Free"]
+      ? [`Delivery: Pickup at ${SITE.address}`, "Shipping: Free"]
       : [
           "Delivery: Shipping",
           `${details.firstName} ${details.lastName}`,

@@ -10,6 +10,7 @@ import { useCart } from "@/lib/cart";
 import { useShop } from "@/lib/shop-store";
 import { formatPrice } from "@/lib/utils";
 import { SPARKLE_URL, absoluteUrl, pageHead, trackEvent } from "@/lib/seo";
+import { SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/shop/$slug")({
   head: ({ params }) => {
@@ -155,7 +156,7 @@ function ProductPage() {
             </div>
           ) : null}
           <p className="mt-4 text-xs text-muted">
-            Checkout next — shipping or Cleveland pickup, then Lana confirms PayPal or Cash App.
+            Checkout next — shipping or pickup at {SITE.address}, then Lana confirms PayPal or Cash App.
           </p>
           <p className="mt-6 text-sm text-muted">
             Want this in different colors, a name, or a matching piece?{" "}

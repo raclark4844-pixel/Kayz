@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { PageIntro } from "@/components/page-intro";
 import { pageHead } from "@/lib/seo";
+import { SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/shipping-returns")({
   head: () =>
@@ -35,7 +36,7 @@ function ShippingPage() {
         <section>
           <h2 className="font-serif text-3xl text-foreground">Shipping</h2>
           <p className="mt-3">
-            We ship inside the United States. Cleveland pickup can be arranged on{" "}
+            We ship inside the United States. Local pickup at {SITE.address} can be arranged on{" "}
             <Link to="/contact" className="text-gold underline">
               contact
             </Link>

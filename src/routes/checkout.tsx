@@ -272,7 +272,7 @@ function CheckoutPage() {
               </div>
             ) : (
               <p className="mt-4 text-sm text-muted">
-                Pickup is in Cleveland, Ohio. Allow {leadTimeLabel(lead)} for made-to-order
+                Pickup is at {SITE.address}. Allow {leadTimeLabel(lead)} for made-to-order
                 pieces, then Lana will text a time.
               </p>
             )}

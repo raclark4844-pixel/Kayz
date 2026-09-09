@@ -62,7 +62,13 @@ export function SiteFooter() {
                 {SITE.email}
               </a>
             </li>
-            <li>{SITE.city}</li>
+            <li>
+              {SITE.street}
+              <br />
+              {SITE.unit}
+              <br />
+              {SITE.city} {SITE.zip}
+            </li>
           </ul>
         </div>
       </div>

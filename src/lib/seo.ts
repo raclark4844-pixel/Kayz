@@ -9,7 +9,7 @@ export const SITE_TITLE = "Handmade Tumblers, Candles & Charms | KayzCharmzz Cle
 export const SITE_DESCRIPTION =
   "Handmade tumblers, junk phone cases, soy candles, charm jewelry, and beaded pens from a Black-owned Cleveland boutique. Custom orders welcome — shop KayzCharmzz.";
 
-export const NAP_LINE = `IK’s Charms & True Sparkle · Cleveland, Ohio · ${SITE.email} · ${SITE.phone}`;
+export const NAP_LINE = `IK’s Charms & True Sparkle · ${SITE.address} · ${SITE.email} · ${SITE.phone}`;
 export const SISTER_SENTENCE =
   "KayzCharmzz and True Sparkle are sister brands under IK’s Charms & True Sparkle.";
 
@@ -47,7 +47,7 @@ export function pageHead({
       { name: "robots", content: "index, follow, max-image-preview:large" },
       { name: "author", content: SITE_NAME },
       { name: "geo.region", content: "US-OH" },
-      { name: "geo.placename", content: "Cleveland" },
+      { name: "geo.placename", content: "Avon" },
       { property: "og:title", content: title },
       { property: "og:description", content: description },
       { property: "og:url", content: url },
@@ -78,8 +78,10 @@ export const organizationJsonLd = {
       description: SITE_DESCRIPTION,
       address: {
         "@type": "PostalAddress",
-        addressLocality: "Cleveland",
+        streetAddress: "35966 Detroit Rd #1022",
+        addressLocality: "Avon",
         addressRegion: "OH",
+        postalCode: "44011",
         addressCountry: "US",
       },
       parentOrganization: {
