@@ -8,6 +8,7 @@ import {
   type LeadTimeId,
   type Product,
 } from "./catalog";
+import { applyProductCopy } from "./product-copy";
 
 type ProductRow = {
   slug: string;
@@ -37,11 +38,11 @@ function parseList(raw: string): string[] {
 
 function rowToProduct(row: ProductRow): Product {
   const categories = parseList(row.categories).filter(isCategoryId);
-  return {
+  const product: Product = {
     slug: row.slug,
     name: row.name,
     price: Number(row.price),
-    categories: categories.length ? categories : ["charms"],
+    categories: categories.length ? categories : ["jewelry"],
     short: row.short,
     description: row.description,
     details: parseList(row.details),
@@ -49,6 +50,8 @@ function rowToProduct(row: ProductRow): Product {
     featured: asBool(row.featured),
     leadTime: isLeadTimeId(row.lead_time) ? row.lead_time : "1-week",
   };
+  applyProductCopy([product]);
+  return product;
 }
 
 async function seededSql() {

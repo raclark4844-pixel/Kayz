@@ -11,12 +11,19 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as CandlesRouteImport } from './routes/candles'
 import { Route as CheckoutRouteImport } from './routes/checkout'
 import { Route as ClassesRouteImport } from './routes/classes'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as CustomRouteImport } from './routes/custom'
+import { Route as CustomOrdersRouteImport } from './routes/custom-orders'
+import { Route as JewelryRouteImport } from './routes/jewelry'
 import { Route as LoginRouteImport } from './routes/login'
+import { Route as PensRouteImport } from './routes/pens'
+import { Route as PhoneCasesRouteImport } from './routes/phone-cases'
+import { Route as ShippingReturnsRouteImport } from './routes/shipping-returns'
 import { Route as ShopRouteImport } from './routes/shop'
+import { Route as TumblersRouteImport } from './routes/tumblers'
 import { Route as ShopSlugRouteImport } from './routes/shop.$slug'
 
 const IndexRoute = IndexRouteImport.update({
@@ -27,6 +34,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CandlesRoute = CandlesRouteImport.update({
+  id: '/candles',
+  path: '/candles',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CheckoutRoute = CheckoutRouteImport.update({
@@ -49,14 +61,44 @@ const CustomRoute = CustomRouteImport.update({
   path: '/custom',
   getParentRoute: () => rootRouteImport,
 } as any)
+const CustomOrdersRoute = CustomOrdersRouteImport.update({
+  id: '/custom-orders',
+  path: '/custom-orders',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const JewelryRoute = JewelryRouteImport.update({
+  id: '/jewelry',
+  path: '/jewelry',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LoginRoute = LoginRouteImport.update({
   id: '/login',
   path: '/login',
   getParentRoute: () => rootRouteImport,
 } as any)
+const PensRoute = PensRouteImport.update({
+  id: '/pens',
+  path: '/pens',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PhoneCasesRoute = PhoneCasesRouteImport.update({
+  id: '/phone-cases',
+  path: '/phone-cases',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ShippingReturnsRoute = ShippingReturnsRouteImport.update({
+  id: '/shipping-returns',
+  path: '/shipping-returns',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ShopRoute = ShopRouteImport.update({
   id: '/shop',
   path: '/shop',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TumblersRoute = TumblersRouteImport.update({
+  id: '/tumblers',
+  path: '/tumblers',
   getParentRoute: () => rootRouteImport,
 } as any)
 const ShopSlugRoute = ShopSlugRouteImport.update({
@@ -68,35 +110,56 @@ const ShopSlugRoute = ShopSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/candles': typeof CandlesRoute
   '/checkout': typeof CheckoutRoute
   '/classes': typeof ClassesRoute
   '/contact': typeof ContactRoute
   '/custom': typeof CustomRoute
+  '/custom-orders': typeof CustomOrdersRoute
+  '/jewelry': typeof JewelryRoute
   '/login': typeof LoginRoute
+  '/pens': typeof PensRoute
+  '/phone-cases': typeof PhoneCasesRoute
+  '/shipping-returns': typeof ShippingReturnsRoute
   '/shop': typeof ShopRouteWithChildren
+  '/tumblers': typeof TumblersRoute
   '/shop/$slug': typeof ShopSlugRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/candles': typeof CandlesRoute
   '/checkout': typeof CheckoutRoute
   '/classes': typeof ClassesRoute
   '/contact': typeof ContactRoute
   '/custom': typeof CustomRoute
+  '/custom-orders': typeof CustomOrdersRoute
+  '/jewelry': typeof JewelryRoute
   '/login': typeof LoginRoute
+  '/pens': typeof PensRoute
+  '/phone-cases': typeof PhoneCasesRoute
+  '/shipping-returns': typeof ShippingReturnsRoute
   '/shop': typeof ShopRouteWithChildren
+  '/tumblers': typeof TumblersRoute
   '/shop/$slug': typeof ShopSlugRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/candles': typeof CandlesRoute
   '/checkout': typeof CheckoutRoute
   '/classes': typeof ClassesRoute
   '/contact': typeof ContactRoute
   '/custom': typeof CustomRoute
+  '/custom-orders': typeof CustomOrdersRoute
+  '/jewelry': typeof JewelryRoute
   '/login': typeof LoginRoute
+  '/pens': typeof PensRoute
+  '/phone-cases': typeof PhoneCasesRoute
+  '/shipping-returns': typeof ShippingReturnsRoute
   '/shop': typeof ShopRouteWithChildren
+  '/tumblers': typeof TumblersRoute
   '/shop/$slug': typeof ShopSlugRoute
 }
 export interface FileRouteTypes {
@@ -104,46 +167,74 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/candles'
     | '/checkout'
     | '/classes'
     | '/contact'
     | '/custom'
+    | '/custom-orders'
+    | '/jewelry'
     | '/login'
+    | '/pens'
+    | '/phone-cases'
+    | '/shipping-returns'
     | '/shop'
+    | '/tumblers'
     | '/shop/$slug'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/candles'
     | '/checkout'
     | '/classes'
     | '/contact'
     | '/custom'
+    | '/custom-orders'
+    | '/jewelry'
     | '/login'
+    | '/pens'
+    | '/phone-cases'
+    | '/shipping-returns'
     | '/shop'
+    | '/tumblers'
     | '/shop/$slug'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/candles'
     | '/checkout'
     | '/classes'
     | '/contact'
     | '/custom'
+    | '/custom-orders'
+    | '/jewelry'
     | '/login'
+    | '/pens'
+    | '/phone-cases'
+    | '/shipping-returns'
     | '/shop'
+    | '/tumblers'
     | '/shop/$slug'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  CandlesRoute: typeof CandlesRoute
   CheckoutRoute: typeof CheckoutRoute
   ClassesRoute: typeof ClassesRoute
   ContactRoute: typeof ContactRoute
   CustomRoute: typeof CustomRoute
+  CustomOrdersRoute: typeof CustomOrdersRoute
+  JewelryRoute: typeof JewelryRoute
   LoginRoute: typeof LoginRoute
+  PensRoute: typeof PensRoute
+  PhoneCasesRoute: typeof PhoneCasesRoute
+  ShippingReturnsRoute: typeof ShippingReturnsRoute
   ShopRoute: typeof ShopRouteWithChildren
+  TumblersRoute: typeof TumblersRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -160,6 +251,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/candles': {
+      id: '/candles'
+      path: '/candles'
+      fullPath: '/candles'
+      preLoaderRoute: typeof CandlesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/checkout': {
@@ -190,6 +288,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof CustomRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/custom-orders': {
+      id: '/custom-orders'
+      path: '/custom-orders'
+      fullPath: '/custom-orders'
+      preLoaderRoute: typeof CustomOrdersRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/jewelry': {
+      id: '/jewelry'
+      path: '/jewelry'
+      fullPath: '/jewelry'
+      preLoaderRoute: typeof JewelryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/login': {
       id: '/login'
       path: '/login'
@@ -197,11 +309,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LoginRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/pens': {
+      id: '/pens'
+      path: '/pens'
+      fullPath: '/pens'
+      preLoaderRoute: typeof PensRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/phone-cases': {
+      id: '/phone-cases'
+      path: '/phone-cases'
+      fullPath: '/phone-cases'
+      preLoaderRoute: typeof PhoneCasesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/shipping-returns': {
+      id: '/shipping-returns'
+      path: '/shipping-returns'
+      fullPath: '/shipping-returns'
+      preLoaderRoute: typeof ShippingReturnsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/shop': {
       id: '/shop'
       path: '/shop'
       fullPath: '/shop'
       preLoaderRoute: typeof ShopRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tumblers': {
+      id: '/tumblers'
+      path: '/tumblers'
+      fullPath: '/tumblers'
+      preLoaderRoute: typeof TumblersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/shop/$slug': {
@@ -227,12 +367,19 @@ const ShopRouteWithChildren = ShopRoute._addFileChildren(ShopRouteChildren)
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  CandlesRoute: CandlesRoute,
   CheckoutRoute: CheckoutRoute,
   ClassesRoute: ClassesRoute,
   ContactRoute: ContactRoute,
   CustomRoute: CustomRoute,
+  CustomOrdersRoute: CustomOrdersRoute,
+  JewelryRoute: JewelryRoute,
   LoginRoute: LoginRoute,
+  PensRoute: PensRoute,
+  PhoneCasesRoute: PhoneCasesRoute,
+  ShippingReturnsRoute: ShippingReturnsRoute,
   ShopRoute: ShopRouteWithChildren,
+  TumblersRoute: TumblersRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

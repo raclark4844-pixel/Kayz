@@ -1,12 +1,34 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { MailForm } from "@/components/mail-form";
 import { PageIntro } from "@/components/page-intro";
+import { JsonLd } from "@/components/json-ld";
+import { pageHead } from "@/lib/seo";
 
-export const Route = createFileRoute("/custom")({ component: CustomPage });
+export const Route = createFileRoute("/custom")({
+  head: () =>
+    pageHead({
+      title: "Custom Orders | KayzCharmzz Cleveland",
+      description:
+        "Custom tumblers, charm jewelry, candles, and junk cases made to order in Cleveland. Tell Kay the vision — she will bring it to life.",
+      path: "/custom",
+    }),
+  component: CustomPage,
+});
 
 function CustomPage() {
   return (
     <main className="pb-nav pb-20">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "KayzCharmzz custom handmade gifts",
+          provider: { "@type": "Organization", name: "KayzCharmzz" },
+          areaServed: "US",
+          description:
+            "Custom tumblers, charm jewelry, soy candles, and junk phone cases made to order in Cleveland, Ohio.",
+        }}
+      />
       <PageIntro kicker="Made for you" title="Custom orders">
         Custom is part of the shop. A unique design, a gift with a name on it,
         a tumbler in her colors — Kay will take the vision from here.

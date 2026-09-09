@@ -3,9 +3,18 @@ import { ProductCard } from "@/components/product-card";
 import { Button } from "@/components/ui/button";
 import { CATEGORIES, featuredProducts } from "@/lib/catalog";
 import { SITE } from "@/lib/site";
+import { SPARKLE_URL, pageHead, SITE_DESCRIPTION, SITE_TITLE } from "@/lib/seo";
 import { useShop } from "@/lib/shop-store";
 
-export const Route = createFileRoute("/")({ component: Home });
+export const Route = createFileRoute("/")({
+  head: () =>
+    pageHead({
+      title: SITE_TITLE,
+      description: SITE_DESCRIPTION,
+      path: "/",
+    }),
+  component: Home,
+});
 
 function Home() {
   const catalog = useShop((s) => s.products);
@@ -28,22 +37,27 @@ function Home() {
             <p className="text-[0.7rem] font-medium uppercase tracking-[0.28em] text-gold">
               {SITE.city} · Est. {SITE.est}
             </p>
-            <p className="mt-2 font-serif text-2xl italic text-foreground sm:text-3xl">
-              A store with a purpose.
-            </p>
+            <h1 className="mt-2 font-serif text-3xl italic text-foreground sm:text-4xl">
+              Handmade tumblers, candles & charms
+            </h1>
           </div>
         </div>
       </section>
 
       <section className="relative mx-auto max-w-3xl px-4 py-16 text-center sm:px-6">
         <p className="text-[0.7rem] uppercase tracking-[0.28em] text-rose">Handmade boutique</p>
-        <h2 className="mt-3 font-serif text-3xl sm:text-4xl">
-          Beautiful gifts, without breaking the bank.
-        </h2>
-        <p className="mt-4 text-muted">
-          Jewelry, candles, tumblers, charms, and diamond art kits — made with
-          care in Cleveland. Custom is part of the shop.
-        </p>
+          <h2 className="mt-3 font-serif text-3xl sm:text-4xl">
+            Beautiful gifts, without breaking the bank.
+          </h2>
+          <p className="mt-4 text-muted">
+            Beautiful gifts, without breaking the bank. Jewelry, soy candles,
+            tumblers, junk phone cases, and beaded pens — made with care in Cleveland.
+            Custom is part of the shop. Original diamond painting kits live at{" "}
+            <a href={SPARKLE_URL} className="text-gold underline">
+              True Sparkle
+            </a>
+            .
+          </p>
         <div className="mt-7 flex flex-wrap items-center justify-center gap-3">
           <Button asChild>
             <Link to="/shop">Shop</Link>
@@ -57,17 +71,16 @@ function Home() {
       <section className="relative mx-auto max-w-6xl px-4 pb-6 sm:px-6">
         <div className="grid grid-cols-2 gap-px bg-line md:grid-cols-3">
           {CATEGORIES.map((cat) => (
-            <Link
+            <a
               key={cat.id}
-              to="/shop"
-              search={{ cat: cat.id }}
+              href={cat.path}
               className="bg-background px-4 py-8 text-center transition-colors hover:bg-card"
             >
               <span className="block font-serif text-2xl text-foreground">{cat.label}</span>
               <span className="mt-2 block text-[0.65rem] uppercase tracking-[0.22em] text-gold">
                 Shop
               </span>
-            </Link>
+            </a>
           ))}
         </div>
       </section>

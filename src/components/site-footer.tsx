@@ -3,6 +3,7 @@ import { BrandMark } from "@/components/brand-mark";
 import { FamilyBrandButtons } from "@/components/family-links";
 import { SocialLinks } from "@/components/social-icons";
 import { FAMILY, NAV, SITE } from "@/lib/site";
+import { NAP_LINE } from "@/lib/seo";
 
 export function SiteFooter() {
   return (
@@ -12,7 +13,7 @@ export function SiteFooter() {
           <BrandMark />
           <p className="mt-3 max-w-sm text-sm text-muted">
             {SITE.tagline}. Handmade jewelry, candles, tumblers, charms, and
-            diamond art from Cleveland.
+            junk phone cases from Cleveland.
           </p>
           <SocialLinks className="-ml-2 mt-4" />
         </div>
@@ -28,6 +29,11 @@ export function SiteFooter() {
                 </Link>
               </li>
             ))}
+            <li>
+              <Link to="/shipping-returns" className="text-muted transition-colors hover:text-gold">
+                Shipping & returns
+              </Link>
+            </li>
           </ul>
         </div>
         <div>
@@ -65,8 +71,8 @@ export function SiteFooter() {
         <FamilyBrandButtons className="mt-6" />
       </div>
       <div className="gold-rule" />
-      <p className="px-4 py-5 text-center text-[0.7rem] uppercase tracking-[0.18em] text-muted">
-        Female & Black owned · {SITE.city} · Est. {SITE.est}
+      <p className="px-4 py-5 text-center text-[0.7rem] tracking-[0.12em] text-muted">
+        {NAP_LINE}
       </p>
     </footer>
   );

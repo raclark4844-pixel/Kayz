@@ -3,8 +3,18 @@ import { MailForm } from "@/components/mail-form";
 import { PageIntro } from "@/components/page-intro";
 import { SocialLinks } from "@/components/social-icons";
 import { SITE } from "@/lib/site";
+import { pageHead } from "@/lib/seo";
 
-export const Route = createFileRoute("/contact")({ component: ContactPage });
+export const Route = createFileRoute("/contact")({
+  head: () =>
+    pageHead({
+      title: "Contact KayzCharmzz | Cleveland",
+      description:
+        "Email Lana Moss or call the Cleveland studio about handmade tumblers, candles, junk cases, jewelry, and custom orders.",
+      path: "/contact",
+    }),
+  component: ContactPage,
+});
 
 function ContactPage() {
   return (

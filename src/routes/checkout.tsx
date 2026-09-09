@@ -15,9 +15,18 @@ import {
 import { resolveCart, useCart } from "@/lib/cart";
 import { mailtoHref, SITE } from "@/lib/site";
 import { useShop } from "@/lib/shop-store";
+import { pageHead, trackEvent } from "@/lib/seo";
 import { cn, formatPrice } from "@/lib/utils";
 
-export const Route = createFileRoute("/checkout")({ component: CheckoutPage });
+export const Route = createFileRoute("/checkout")({
+  head: () =>
+    pageHead({
+      title: "Checkout | KayzCharmzz",
+      description: "Review your KayzCharmzz bag and email the order to the Cleveland studio.",
+      path: "/checkout",
+    }),
+  component: CheckoutPage,
+});
 
 function CheckoutPage() {
   const lines = useCart((s) => s.lines);
@@ -65,10 +74,12 @@ function CheckoutPage() {
       zip,
       notes,
     };
+    trackEvent("begin_checkout", { currency: "USD", value: total });
     window.location.href = mailtoHref(
       `KayzCharmzz order — ${firstName} ${lastName}`.trim(),
       buildOrderEmail(items, details),
     );
+    trackEvent("purchase", { currency: "USD", value: total });
     setPlaced(true);
     clear();
   }

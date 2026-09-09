@@ -51,7 +51,7 @@ function EditorForm() {
   const [description, setDescription] = useState(editing?.description ?? "");
   const [image, setImage] = useState(editing?.image ?? "");
   const [leadTime, setLeadTime] = useState<LeadTimeId>(editing?.leadTime ?? "1-week");
-  const [category, setCategory] = useState<CategoryId>(editing?.categories[0] ?? "charms");
+  const [category, setCategory] = useState<CategoryId>(editing?.categories[0] ?? "jewelry");
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState<string | null>(null);
 

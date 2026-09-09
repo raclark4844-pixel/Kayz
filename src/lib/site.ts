@@ -17,12 +17,12 @@ export const FAMILY = {
   parent: {
     name: "IK’s Charms & True Sparkle",
     label: "Parent company",
-    href: "https://winter-lark-trail-plum.grok.me",
+    href: "https://www.ikscharmsandtwosparkles.com",
   },
   sparkle: {
     name: "True Sparkle",
     label: "True Sparkle",
-    href: "https://aurora-brook-zest-cosmic.grok.me",
+    href: "https://www.truesparkles.com",
   },
 } as const;
 

@@ -1,0 +1,41 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "kayzcharmzz.com" }],
+      "destination": "https://www.kayzcharmzz.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "kayz.vercel.app" }],
+      "destination": "https://www.kayzcharmzz.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "kayzcharmzz.grok.me" }],
+      "destination": "https://www.kayzcharmzz.com/:path*",
+      "permanent": true
+    },
+    { "source": "/shop/diamond-painting-kit", "destination": "https://www.truesparkles.com/kits", "permanent": true },
+    { "source": "/shop/gnome-diamond-art", "destination": "https://www.truesparkles.com/kits", "permanent": true },
+    { "source": "/custom-orders", "destination": "/custom", "permanent": true },
+    { "source": "/shop", "has": [{ "type": "query", "key": "cat", "value": "tumblers" }], "destination": "/tumblers", "permanent": true },
+    { "source": "/shop", "has": [{ "type": "query", "key": "cat", "value": "candles" }], "destination": "/candles", "permanent": true },
+    { "source": "/shop", "has": [{ "type": "query", "key": "cat", "value": "cases" }], "destination": "/phone-cases", "permanent": true },
+    { "source": "/shop", "has": [{ "type": "query", "key": "cat", "value": "pens" }], "destination": "/pens", "permanent": true },
+    { "source": "/shop", "has": [{ "type": "query", "key": "cat", "value": "earrings" }], "destination": "/jewelry", "permanent": true },
+    { "source": "/shop", "has": [{ "type": "query", "key": "cat", "value": "charms" }], "destination": "/jewelry", "permanent": true },
+    { "source": "/shop", "has": [{ "type": "query", "key": "cat", "value": "art" }], "destination": "https://www.truesparkles.com/kits", "permanent": true }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Strict-Transport-Security", "value": "max-age=63072000; includeSubDomains; preload" }
+      ]
+    }
+  ]
+}

@@ -1,10 +1,11 @@
+import { applyProductCopy } from "@/lib/product-copy";
+
 export const CATEGORIES = [
-  { id: "tumblers", label: "Tumblers" },
-  { id: "candles", label: "Candles" },
-  { id: "charms", label: "Charms" },
-  { id: "earrings", label: "Earrings" },
-  { id: "cases", label: "Cases" },
-  { id: "art", label: "Art" },
+  { id: "tumblers", path: "/tumblers", label: "Tumblers" },
+  { id: "candles", path: "/candles", label: "Candles" },
+  { id: "jewelry", path: "/jewelry", label: "Jewelry" },
+  { id: "cases", path: "/phone-cases", label: "Phone cases" },
+  { id: "pens", path: "/pens", label: "Pens" },
 ] as const;
 
 export type CategoryId = (typeof CATEGORIES)[number]["id"];
@@ -29,6 +30,7 @@ export type Product = {
   image: string;
   featured?: boolean;
   leadTime: LeadTimeId;
+  alt?: string;
 };
 
 export function isCategoryId(value: string): value is CategoryId {
@@ -271,7 +273,7 @@ export const PRODUCTS: Product[] = [
     slug: "floral-pens-set",
     name: "Floral Beaded Pens + Lip Gloss Set",
     price: 12,
-    categories: ["charms"],
+    categories: ["pens"],
     short: "Two beaded pens, tassel charms, and a gloss.",
     description:
       "Floral patterned pens with decorative beads and tassel charms — a set of two pens with lip gloss. Pretty enough to gift, useful enough to keep.",
@@ -284,7 +286,7 @@ export const PRODUCTS: Product[] = [
     slug: "sunflower-bracelet",
     name: "Sunflower Yellow White Black Beaded Bracelet",
     price: 10,
-    categories: ["charms"],
+    categories: ["jewelry"],
     short: "Handmade sunflower stretch bracelet.",
     description:
       "Handmade beaded stretch bracelet in yellow, white, and black with a sunflower charm. Adjustable, flower theme, made for birthdays and everyday.",
@@ -296,7 +298,7 @@ export const PRODUCTS: Product[] = [
     slug: "turquoise-bracelet",
     name: "Turquoise and White Beaded Bracelet",
     price: 7.19,
-    categories: ["charms"],
+    categories: ["jewelry"],
     short: "Simple turquoise and white beads.",
     description:
       "Handmade turquoise and white plastic beaded bracelet. Easy stretch fit, a little color for the wrist without a high price.",
@@ -308,7 +310,7 @@ export const PRODUCTS: Product[] = [
     slug: "heart-locket-necklace",
     name: "Heart Locket Mood Necklace",
     price: 10,
-    categories: ["charms"],
+    categories: ["jewelry"],
     short: "A small heart that shifts with the mood.",
     description:
       "Heart locket mood necklace — a gold-tone heart pendant that changes color. New other, ready to gift.",
@@ -320,7 +322,7 @@ export const PRODUCTS: Product[] = [
     slug: "earrings-charm-bracelet",
     name: "Earrings + Charm Bracelet",
     price: 22,
-    categories: ["earrings", "charms"],
+    categories: ["jewelry"],
     short: "A matching set you can wear today.",
     description:
       "Gold-tone charm earrings paired with a matching bracelet — little hearts, crystals, and charms that catch the light. A ready-to-gift set, with custom charm mixes on request.",
@@ -332,7 +334,7 @@ export const PRODUCTS: Product[] = [
     slug: "heart-drop-earrings",
     name: "I Love You Heart Drop Earrings",
     price: 10,
-    categories: ["earrings"],
+    categories: ["jewelry"],
     short: "KayzCharmzz heart drops that say it outright.",
     description:
       "Handmade I Love You heart drop earrings from KayzCharmzz. Gold-tone hearts on a drop — a small, clear gift.",
@@ -342,34 +344,10 @@ export const PRODUCTS: Product[] = [
     leadTime: "1-week",
   },
   {
-    slug: "gnome-diamond-art",
-    name: "Valentine Gnome Garden Diamond Painting",
-    price: 30,
-    categories: ["art"],
-    short: "12×16 framed gnome garden, round drills.",
-    description:
-      "Valentine’s Day gnome garden diamond painting — 12 by 16 inches, round drills on canvas, framed. One of a kind piece from the shop, signed by KayzCharmzz.",
-    details: ["12 × 16 in", "Framed", "Round drills", "OOAK"],
-    image: "/products/gnome-diamond-art.jpg",
-    leadTime: "1-week",
-  },
-  {
-    slug: "diamond-painting-kit",
-    name: "Diamond Painting Kit",
-    price: 18,
-    categories: ["art"],
-    short: "A quiet, sparkling night in.",
-    description:
-      "A 5D diamond painting kit with round drills — floral, sparkly, and ready to sit with.",
-    details: ["5D round drills", "Floral design", "Stylus and wax included"],
-    image: "/products/diamond-kit.jpg",
-    leadTime: "1-week",
-  },
-  {
     slug: "hoodie-art-print",
     name: "Bejeweled Hoodie Art Print",
     price: 15,
-    categories: ["art"],
+    categories: ["jewelry"],
     short: "Colorful digital artwork of a rhinestone hoodie.",
     description:
       "Colorful bejeweled hoodie art print — digital artwork from the shop, printed to hang. A little extra sparkle for a wall.",
@@ -379,18 +357,25 @@ export const PRODUCTS: Product[] = [
   },
 ];
 
+applyProductCopy(PRODUCTS);
+
+const RETIRED_SLUGS = new Set(["diamond-painting-kit", "gnome-diamond-art"]);
+
 export function getProduct(slug: string, catalog: Product[] = PRODUCTS) {
+  if (RETIRED_SLUGS.has(slug)) return undefined;
   return catalog.find((p) => p.slug === slug);
 }
 
 export function productsByCategory(category?: string, catalog: Product[] = PRODUCTS) {
-  if (!category || category === "all") return catalog;
-  return catalog.filter((p) => p.categories.includes(category as CategoryId));
+  const live = catalog.filter((p) => !RETIRED_SLUGS.has(p.slug));
+  if (!category || category === "all") return live;
+  return live.filter((p) => p.categories.includes(category as CategoryId));
 }
 
 export function featuredProducts(catalog: Product[] = PRODUCTS) {
-  const featured = catalog.filter((p) => p.featured);
-  return featured.length ? featured : catalog.slice(0, 6);
+  const live = productsByCategory("all", catalog);
+  const featured = live.filter((p) => p.featured);
+  return featured.length ? featured : live.slice(0, 6);
 }
 
 export function categoryLabel(id: string) {

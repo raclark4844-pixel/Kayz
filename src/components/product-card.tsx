@@ -31,7 +31,7 @@ export function ProductCard({
       >
         <img
           src={product.image}
-          alt={product.name}
+          alt={product.alt ?? `${product.name} handmade by KayzCharmzz`}
           className="aspect-square w-full object-cover transition-transform duration-500 ease-out group-hover:scale-[1.03]"
         />
       </Link>

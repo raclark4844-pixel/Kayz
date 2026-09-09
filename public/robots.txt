@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /login
+Disallow: /checkout
+
+Sitemap: https://www.kayzcharmzz.com/sitemap.xml

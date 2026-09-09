@@ -2,11 +2,39 @@ import { createFileRoute } from "@tanstack/react-router";
 import { MailForm } from "@/components/mail-form";
 import { PageIntro } from "@/components/page-intro";
 
-export const Route = createFileRoute("/classes")({ component: ClassesPage });
+import { JsonLd } from "@/components/json-ld";
+import { pageHead } from "@/lib/seo";
+
+export const Route = createFileRoute("/classes")({
+  head: () =>
+    pageHead({
+      title: "Jewelry Classes | KayzCharmzz Cleveland",
+      description:
+        "Book a one-hour online jewelry class with Kay for $55, or request a candle class. Learn charms, findings, and finishing in Cleveland’s sister studio.",
+      path: "/classes",
+    }),
+  component: ClassesPage,
+});
 
 function ClassesPage() {
   return (
     <main className="pb-nav pb-20">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "Service",
+          name: "KayzCharmzz jewelry class",
+          provider: { "@type": "Organization", name: "KayzCharmzz" },
+          areaServed: "US",
+          offers: {
+            "@type": "Offer",
+            price: "55.00",
+            priceCurrency: "USD",
+            availability: "https://schema.org/InStock",
+          },
+          description: "One hour live online jewelry class. Candle class poured on request.",
+        }}
+      />
       <PageIntro kicker="Sit with Kay" title="Classes">
         Learn the pieces, then take the skill home. Jewelry is booked by the
         hour. Candle class is poured on request.

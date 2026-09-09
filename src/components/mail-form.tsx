@@ -2,6 +2,7 @@ import { useState, type FormEvent, type ReactNode } from "react";
 import { Button } from "@/components/ui/button";
 import { Field, Input, SelectField, Textarea } from "@/components/ui/input";
 import { mailtoHref, SITE } from "@/lib/site";
+import { trackEvent } from "@/lib/seo";
 
 type FieldDef =
   | {
@@ -40,6 +41,7 @@ export function MailForm({
       `${subjectPrefix}${name ? ` — ${name}` : ""}`,
       `Sent from the KayzCharmzz site\n\n${lines.join("\n")}`,
     );
+    trackEvent("generate_lead", { form: subjectPrefix });
     setSent(true);
     e.currentTarget.reset();
   }
