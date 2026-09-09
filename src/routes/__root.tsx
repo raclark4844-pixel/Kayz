@@ -1,4 +1,4 @@
-import { createRootRoute, HeadContent, Outlet, Scripts, redirect, useRouterState } from "@tanstack/react-router";
+import { createRootRoute, HeadContent, Outlet, Scripts, useRouterState } from "@tanstack/react-router";
 import { useEffect } from "react";
 import { Toaster } from "sonner";
 import { BottomNav } from "@/components/bottom-nav";
@@ -12,7 +12,6 @@ import { AuthProvider } from "@/lib/auth/provider";
 import { useCart } from "@/lib/cart";
 import { useShop } from "@/lib/shop-store";
 import { cn } from "@/lib/utils";
-import { getCanonicalRedirect } from "@/lib/canonical-host";
 import { gaId, organizationJsonLd, pageHead, SITE_DESCRIPTION, SITE_TITLE } from "@/lib/seo";
 import appCss from "../styles.css?url";
 
@@ -56,11 +55,6 @@ function AppFrame() {
 }
 
 export const Route = createRootRoute({
-  beforeLoad: async () => {
-    if (typeof window !== "undefined") return;
-    const dest = await getCanonicalRedirect();
-    if (dest) throw redirect({ href: dest });
-  },
   head: () => {
     const seo = pageHead({
       title: SITE_TITLE,
