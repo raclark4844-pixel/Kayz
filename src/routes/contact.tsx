@@ -9,11 +9,15 @@ export const Route = createFileRoute("/contact")({ component: ContactPage });
 function ContactPage() {
   return (
     <main className="pb-nav pb-20">
-      <PageIntro kicker="Write Kay" title="Contact">
-        Questions, pickups, and custom ideas — she reads every note.
+      <PageIntro kicker="Write Lana" title="Contact">
+        Questions, pickups, and custom ideas — Lana Moss reads every note.
       </PageIntro>
       <div className="mx-auto grid max-w-6xl gap-12 px-4 py-12 sm:px-6 md:grid-cols-2">
         <div className="space-y-8">
+          <div>
+            <p className="text-xs uppercase tracking-[0.22em] text-gold">Contact</p>
+            <p className="mt-1 font-serif text-2xl">{SITE.contact}</p>
+          </div>
           <div>
             <p className="text-xs uppercase tracking-[0.22em] text-gold">Email</p>
             <a href={`mailto:${SITE.email}`} className="mt-1 block font-serif text-2xl hover:text-gold">
@@ -38,7 +42,7 @@ function ContactPage() {
         </div>
         <MailForm
           subjectPrefix="KayzCharmzz message"
-          submitLabel="Email Kay"
+          submitLabel="Email Lana"
           fields={[
             { name: "name", label: "Name", required: true, autoComplete: "name" },
             { name: "email", label: "Email", type: "email", required: true, autoComplete: "email" },

@@ -49,7 +49,7 @@ export function MailForm({
       <div className="rounded-lg bg-card px-5 py-8 text-center shadow-[0_0_0_1px_rgb(212_175_55/0.22)]">
         <p className="font-serif text-2xl">Draft opened</p>
         <p className="mt-2 text-sm text-muted">
-          If your mail app did not open, write Kay at {SITE.email}.
+          If your mail app did not open, write {SITE.contact} at {SITE.email}.
         </p>
         <Button className="mt-5" variant="outline" onClick={() => setSent(false)}>
           Send another

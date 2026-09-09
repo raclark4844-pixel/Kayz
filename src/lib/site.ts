@@ -2,6 +2,7 @@ export const SITE = {
   name: "KayzCharmzz",
   tagline: "A Store With a Purpose",
   email: "lana@ikscharmsandtwosparkles.com",
+  contact: "Lana Moss",
   phone: "216-309-0331",
   phoneHref: "tel:+12163090331",
   city: "Cleveland, Ohio",

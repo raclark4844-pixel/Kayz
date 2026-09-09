@@ -32,9 +32,10 @@ export function SiteFooter() {
         </div>
         <div>
           <p className="text-[0.65rem] font-medium uppercase tracking-[0.22em] text-gold">
-            Kay
+            Contact
           </p>
           <ul className="mt-4 space-y-2.5 text-sm text-muted">
+            <li className="text-foreground">{SITE.contact}</li>
             <li>
               <a className="hover:text-gold" href={SITE.phoneHref}>
                 {SITE.phone}
